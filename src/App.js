@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import GetSummoner from './getSummoner'
+import GetSummoner from './Components/getSummoner'
 
 function App() {
   const [summonerName, setSummonerName] = useState('')
   const [summonerData, setSummonerData] = useState({})
+  const api = useState('RGAPI-50e8d363-3829-4372-b272-5fb78a54e032');
 
   const getSummoner = async (endpoint) => {
     const headers = {
@@ -28,7 +29,7 @@ function App() {
   const handleOnSubmit = (event) => {
     event.preventDefault()
     async function fetchData() {
-      getSummoner(`https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=RGAPI-89ad4586-d8f3-4d8f-b0b0-cf8463be5e83`)
+      getSummoner(`https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${api}`)
     }
     fetchData()
   }
