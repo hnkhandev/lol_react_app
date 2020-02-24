@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import GetSummoner from './Components/getSummoner'
 
+// init the app
 function App() {
   const [summonerName, setSummonerName] = useState('')
   const [summonerData, setSummonerData] = useState({})
